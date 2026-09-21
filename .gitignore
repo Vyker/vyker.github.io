@@ -1,0 +1,6 @@
+_backup_v*
+_figtest*
+_gen_icons.js
+_test*
+_ctl.html
+*.bak

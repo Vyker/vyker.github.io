@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 48" role="img" aria-label="Dr. Shimas Salih, MSK and Sports Medicine, dark background version">
+  <title>Dr. Shimas Salih — MSK &amp; Sports Medicine (dark)</title>
+  <g>
+    <path d="M34 9 A11 11 0 1 0 24 24 A11 11 0 1 1 14 39" fill="none" stroke="#17A2A6" stroke-width="5.5" stroke-linecap="round"/>
+    <path d="M38.8 9.2 A21 21 0 0 1 45 24" fill="none" stroke="#E9A14F" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="10.5" cy="41.5" r="2.6" fill="#E9A14F"/>
+  </g>
+  <text x="58" y="26" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.2" fill="#F2F7F4">Dr. Shimas Salih</text>
+  <text x="58" y="42" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" font-weight="600" letter-spacing="2.6" fill="#9DB4BC">MSK &amp; SPORTS MEDICINE</text>
+</svg>
