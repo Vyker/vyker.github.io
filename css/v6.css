@@ -106,3 +106,33 @@
 }
 /* ---- mobile: chip rail sits under header (z-index 40 to beat header's 30) ---- */
 @media(max-width:899px){.scope-chips{z-index:35}}
+
+/* ================= V6.1 TWEAKS — 2026-09-21 fine-tuning pass ================= */
+
+/* #11 — contact-lede: was white/near-white on cream (barely visible) */
+.contact-lede{color:var(--ink-soft) !important}
+
+/* #3 — footer socials: .ftr-nav a was leaking bone color onto .ftr-social a (white-on-white) */
+.ftr-social a{color:var(--gold-2) !important;background:transparent !important;border:1px solid color-mix(in srgb,var(--bone) 22%,transparent) !important}
+.ftr-social a svg{fill:var(--gold-2) !important}
+.ftr-social a:hover{color:var(--bone) !important;background:color-mix(in srgb,var(--bone) 10%,transparent) !important;border-color:color-mix(in srgb,var(--bone) 40%,transparent) !important}
+.ftr-social a.soc-tbd{color:color-mix(in srgb,var(--bone) 42%,transparent) !important;border-color:color-mix(in srgb,var(--bone) 14%,transparent) !important}
+.ftr-social a.soc-tbd svg{fill:color-mix(in srgb,var(--bone) 42%,transparent) !important}
+
+/* #11 (logos) — hospital logos inside the CTA cards */
+.loc-logo{display:block;width:auto;height:54px;max-width:75%;margin:0 0 14px -4px;object-fit:contain}
+@media(max-width:560px){.loc-logo{height:48px}}
+
+/* #3 — approach h2: "The Approach" word + trailing em */
+.ap-word{font-family:var(--ff-d);font-style:normal;font-weight:500;color:var(--bone)}
+#approach .sec-h em{font-family:var(--ff-d);font-style:italic;color:var(--gold-2);font-size:.62em;margin-inline-start:.35em;line-height:1;white-space:normal}
+
+/* #4 — hero-alt: "or book via clinics" (now an in-page anchor) */
+.hero-alt{color:var(--gold-3)}
+.hero-alt:hover{color:var(--pine)}
+
+/* #4 — the sec-num "03" in approach heading: keep consistent */
+#approach .sec-idx{color:var(--gold-2)}
+
+/* misc */
+.ap-rv .ap-num{font-size:1.5rem}
