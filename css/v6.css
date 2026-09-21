@@ -1,0 +1,108 @@
+/* ================================================================
+   V6 — Section 02 rebuild: "The Full Scope" procedure index.
+   Mobile-first: sticky horizontally-swipeable chip rail (TOC) +
+   page-flow category detail (anchor navigation, zero JS needed).
+   Desktop: sticky rail column + inner-scroll detail column.
+   Every procedure is one WhatsApp tap from — the index is also a
+   booking tool. No dead links, no clutter, no JS dependence.
+   ================================================================ */
+
+.sec-scope{position:relative;background:linear-gradient(180deg,color-mix(in srgb,var(--bone) 84%,var(--card)),var(--card));border-block:1px solid var(--line)}
+.sec-scope .s-head{max-width:var(--maxw);margin:0 auto;padding:4px 22px 0;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px}
+.sec-scope .s-sub{max-width:56ch;margin:8px 0 0;color:var(--ink-soft);font-size:.95rem;line-height:1.55}
+.scope-stat{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid var(--line);border-radius:14px;background:var(--bone)}
+.scope-stat b{font-family:var(--ff-d);font-size:1.8rem;font-weight:600;color:var(--gold-3);line-height:1}
+.scope-stat small{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
+
+/* --- TOC chip rail --- */
+.scope-chips{position:relative;z-index:30;max-width:var(--maxw);margin:20px auto 0;padding:6px 0;transition:box-shadow .3s,background .3s}
+.scope-chips .rail{display:flex;flex-direction:column;gap:8px;padding:0 22px}
+.scope-chip{display:flex;align-items:center;gap:11px;width:100%;min-height:46px;padding:10px 14px;margin:0;border:1px solid var(--line);border-radius:13px;background:var(--card);cursor:pointer;text-align:start;transition:border-color .3s,background .3s;box-sizing:border-box;min-width:0}
+.scope-chip .n{flex:none;width:27px;height:27px;border-radius:9px;display:grid;place-items:center;background:var(--pine);color:var(--gold-2);font-family:var(--ff-d);font-size:.76rem;font-weight:600;letter-spacing:.02em}
+.scope-chip .t{flex:1;min-width:0;font-weight:600;font-size:.92rem;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.scope-chip .c{flex:none;font-size:.7rem;font-weight:700;color:var(--ink-mute);background:color-mix(in srgb,var(--bone) 75%,transparent);border:1px solid var(--line);padding:2px 8px;border-radius:999px}
+.scope-chip .arr{flex:none;color:var(--ink-mute);font-size:.9rem;line-height:1;transform:translateY(-1px)}
+.scope-chip:hover{border-color:color-mix(in srgb,var(--gold) 45%,var(--line))}
+[dir="rtl"] .scope-chip .arr{transform:scaleX(-1) translateY(-1px)}
+
+/* --- detail: category blocks --- */
+.scope-detail{max-width:var(--maxw);margin:26px auto 0;padding:0 22px 8px;display:grid;gap:22px}
+.scope-cat{scroll-margin-top:92px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 20px 22px;box-shadow:0 1px 0 rgba(255,255,255,.6) inset}
+.scope-cat:first-child{margin-top:6px}
+.scope-cath{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.scope-cath-l{display:flex;gap:13px;align-items:flex-start;min-width:0}
+.scope-num{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--pine);color:var(--gold-2);font-family:var(--ff-d);font-size:1rem;font-weight:600;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.scope-cat h3{font-family:var(--ff-d);font-size:1.45rem;font-weight:600;margin:2px 0 4px;color:var(--pine);line-height:1.15}
+.scope-cat .scope-cath-l p{margin:0;color:var(--ink-soft);font-size:.9rem;max-width:56ch;line-height:1.55}
+.scope-cta{display:inline-flex;align-items:center;gap:6px;padding:10px 15px;border-radius:11px;border:1px solid color-mix(in srgb,var(--gold) 45%,var(--line));background:color-mix(in srgb,var(--gold) 7%,var(--card));color:var(--gold-3);font-weight:700;font-size:.84rem;text-decoration:none;white-space:nowrap;transition:background .3s,border-color .3s,transform .3s}
+.scope-cta:hover{background:color-mix(in srgb,var(--gold) 13%,var(--card));border-color:var(--gold);transform:translateY(-2px)}
+.scope-cta .arr{font-size:.95rem;line-height:1;transform:translateY(-1px)}
+[dir="rtl"] .scope-cta .arr{transform:scaleX(-1) translateY(-1px)}
+
+.proc-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:7px}
+.proc{position:relative;display:flex;gap:10px;align-items:center;padding:12px 13px;background:color-mix(in srgb,var(--bone) 45%,var(--card));border:1px solid var(--line);border-radius:11px;min-width:0}
+.proc .b{flex:none;width:6px;height:6px;border-radius:50%;background:var(--gold-2)}
+.proc .p{flex:1;min-width:0;font-size:.92rem;color:var(--ink);line-height:1.45}
+.proc .wa{flex:none;display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:9px;border:1px solid transparent;color:var(--gold-3);font-size:.72rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;text-decoration:none;opacity:.72;transition:opacity .25s,border-color .25s,background .25s}
+.proc .wa svg{width:13px;height:13px;fill:currentColor}
+.proc:hover .wa,.proc .wa:active{opacity:1;border-color:color-mix(in srgb,var(--gold) 45%,transparent);background:color-mix(in srgb,var(--gold) 8%,var(--card))}
+
+/* --- desktop: rail + inner-scroll detail --- */
+@media (min-width:900px){
+  .scope-chips,.scope-detail{max-width:var(--maxw)}
+  .scope-x-cols{display:grid;grid-template-columns:320px minmax(0,1fr);gap:24px;align-items:start}
+  .scope-chips{position:sticky;top:96px;margin:34px auto 0;padding:0}
+  .scope-chips .rail{flex-direction:column;gap:7px;padding:0}
+  .scope-chip{min-height:52px}
+  .scope-chip .t{font-size:.95rem}
+  .scope-detail{max-height:calc(100vh - 140px);overflow-y:auto;scrollbar-width:thin;padding:8px 10px 12px 0;margin:34px auto 0}
+  .scope-detail::-webkit-scrollbar{width:8px}
+  .scope-detail::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+  .scope-cat h3{font-size:1.6rem}
+  .proc-list{grid-template-columns:1fr 1fr}
+  .proc{padding:14px 15px}
+}
+/* mobile: rail = sticky swipeable top strip; detail flows with the page */
+@media (max-width:899px){
+  .scope-chips{position:sticky;top:56px;margin:0;padding:8px 0;background:color-mix(in srgb,var(--bone) 92%,transparent);backdrop-filter:blur(10px) saturate(1.05);-webkit-backdrop-filter:blur(10px) saturate(1.05);border-bottom:1px solid var(--line)}
+  .scope-chips .rail{flex-direction:row;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px 16px;gap:8px}
+  .scope-chips .rail::-webkit-scrollbar{display:none}
+  .scope-chip{flex:none;width:auto;max-width:76vw;min-height:44px;padding:9px 13px}
+  .scope-chip .t{max-width:44vw;font-size:.88rem}
+  .scope-chip .c{display:none}
+  .scope-detail{margin-top:22px;padding:0 16px 12px}
+  .scope-cat{padding:16px 15px 18px}
+  .scope-cat .scope-cath{margin-bottom:12px}
+  .scope-cat h3{font-size:1.28rem}
+  .scope-num{width:38px;height:38px;font-size:.9rem}
+  .scope-cta{width:100%;justify-content:space-between}
+  .proc{min-height:48px}
+}
+
+/* socials */
+.ftr-social{display:flex;flex-direction:column;gap:9px}
+.ftr-social .ftr-soc-lbl{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+.ftr-social-row{display:flex;gap:8px;flex-wrap:wrap}
+.ftr-social a{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid var(--line);border-radius:11px;background:var(--card);color:var(--ink);font-size:.84rem;font-weight:600;text-decoration:none;transition:border-color .3s,background .3s,transform .3s}
+.ftr-social a:hover{border-color:color-mix(in srgb,var(--gold) 50%,var(--line));background:color-mix(in srgb,var(--gold) 6%,var(--card));transform:translateY(-2px)}
+.ftr-social a svg{width:16px;height:16px;fill:currentColor;flex:none}
+.ftr-social a.soc-tbd{opacity:.55;cursor:default;pointer-events:none}
+@media (min-width:960px){.ftr-top{grid-template-columns:auto 1fr 1fr 1fr;align-items:start}}
+
+@media (prefers-reduced-motion:reduce){ .scope-chip,.proc,.scope-cta,.ftr-social a{transition:none} }
+
+/* ---- hero inline DISC sub-link ---- */
+.hero-alt{display:inline-flex;align-items:center;gap:4px;padding:11px 8px;border:0;background:none;color:var(--gold-3);font-family:var(--ff-s);font-weight:600;font-size:.86rem;letter-spacing:.05em;text-decoration:none;cursor:pointer;border-bottom:1px dashed color-mix(in srgb,var(--gold) 45%,transparent);margin-bottom:2px}
+.hero-alt:hover{color:var(--pine);border-bottom-color:var(--gold)}
+.hero-cta .hero-alt{order:2}
+
+/* ---- procedure row hover (subtle) ---- */
+.proc{transition:background .3s,border-color .3s}
+.proc:hover{background:color-mix(in srgb,var(--bone) 65%,var(--card));border-color:color-mix(in srgb,var(--gold) 30%,var(--line))}
+
+/* ---- footer socials: 2-col grid on desktop ---- */
+@media(min-width:960px){
+  .ftr-top{grid-template-columns:auto 1fr 1fr .9fr .8fr}
+}
+/* ---- mobile: chip rail sits under header (z-index 40 to beat header's 30) ---- */
+@media(max-width:899px){.scope-chips{z-index:35}}
