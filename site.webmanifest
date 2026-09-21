@@ -1,0 +1,32 @@
+{
+  "name": "Dr. Shimas Salih — MSK & Sports Medicine",
+  "short_name": "Dr. Salih MSK",
+  "description": "UK-trained Consultant PM&R — MSK & Sports Medicine. Dubai (DHCC) & Abu Dhabi.",
+  "lang": "en",
+  "dir": "auto",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F3EFE5",
+  "theme_color": "#0E2A24",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

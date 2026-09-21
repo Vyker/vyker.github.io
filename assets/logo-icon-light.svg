@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Salih MSK logo mark">
+  <title>Salih MSK — motion monogram</title>
+  <!-- S monogram: two tangent arcs, one stroke -->
+  <path d="M34 9 A11 11 0 1 0 24 24 A11 11 0 1 1 14 39" fill="none" stroke="#0A4D52" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- motion arc: the swing that follows the S -->
+  <path d="M38.8 9.2 A21 21 0 0 1 45 24" fill="none" stroke="#E8963E" stroke-width="3" stroke-linecap="round"/>
+  <!-- precision dot: the point of intervention -->
+  <circle cx="10.5" cy="41.5" r="2.6" fill="#E8963E"/>
+</svg>

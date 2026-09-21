@@ -1,0 +1,233 @@
+/* ============================================================
+   Dr. Shimas Salih — v4 design layer
+   Palette + type are inherited from main.css (same tokens).
+   Media-first, mobile-first. All motion gated behind .js + reduced-motion.
+   ============================================================ */
+
+/* ---- palette mirror (self-contained) ---- */
+:root{
+  --pine:#0E2A24;--bone:#F3EFE5;--gold:#B9873E;--ivory:#FBF8F1;
+  --line:rgba(14,42,36,.14);--line-ivory:rgba(243,239,229,.16);
+  --card:#fff;--ink:#0F1B17;--ink-soft:#41524B;
+  --maxw:1180px;--e:cubic-bezier(.2,.7,.2,1);
+}
+
+/* ============ 1. FLOWING MEDIA REEL ============ */
+.reel{padding:clamp(60px,9vw,120px) 0;position:relative;
+  background:
+    radial-gradient(120% 90% at 12% 0%, rgba(185,135,62,.10), transparent 55%),
+    var(--ivory);
+  overflow-x:clip;overflow-y:hidden;width:100%;max-width:100%;min-width:0;}
+.reel-head{max-width:var(--maxw);margin:0 auto 34px;padding:0 22px;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.reel-rails{max-width:var(--maxw);margin:0 auto;padding:0 22px;
+  width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.reel-row{display:flex;gap:16px;scroll-snap-type:x mandatory;
+  min-width:0;max-width:100%;
+  padding:6px 2px 18px;-webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;scrollbar-color:rgba(185,135,62,.5) transparent}
+.reel-rails::-webkit-scrollbar{height:6px}
+.reel-rails::-webkit-scrollbar-thumb{background:rgba(185,135,62,.45);border-radius:999px}
+.reel-rails::-webkit-scrollbar-track{background:transparent}
+.rcard{scroll-snap-align:center;flex:0 0 auto;min-width:0;width:min(72vw,320px);
+  border-radius:20px;overflow:hidden;position:relative;background:var(--pine);
+  border:1px solid var(--line);box-shadow:0 24px 60px -34px rgba(14,42,36,.55);
+  aspect-ratio:9/16;transition:transform .5s var(--e),box-shadow .5s var(--e)}
+.rcard:hover{transform:translateY(-6px)}
+.rcard video,.rcard .rposter{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.rcard .rposter{background:#0a1f1a}
+.rcard::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(6,20,16,.02) 34%,rgba(6,20,16,.55) 78%,rgba(6,20,16,.82) 100%)}
+.rplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;
+  width:64px;height:64px;border-radius:50%;border:0;cursor:pointer;
+  display:grid;place-items:center;
+  background:color-mix(in srgb,var(--bone) 90%,transparent);
+  box-shadow:0 12px 34px -8px rgba(0,0,0,.6),0 0 0 6px rgba(243,239,229,.12);
+  transition:transform .35s var(--e),background .3s;backdrop-filter:blur(4px)}
+.rplay:hover{transform:translate(-50%,-50%) scale(1.07);background:var(--bone)}
+.rplay svg{transform:translateX(2px);width:26px;height:26px;color:var(--pine)}
+.rcard.is-playing .rplay{opacity:0;pointer-events:none}
+.rcard.is-playing::after{background:linear-gradient(180deg,transparent 40%,rgba(6,20,16,.35) 100%)}
+.rcap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:16px 16px 16px;
+  color:var(--bone)}
+.rcap-k{display:flex;gap:8px;align-items:center;font-size:.68rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:#E9D3A6;margin-bottom:7px}
+.rcap-k .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.rcap p{margin:0;font-family:var(--ff-d,Fraunces,serif);font-size:1.02rem;line-height:1.4;color:#F4F0E6;
+  overflow-wrap:break-word;hyphens:auto;max-width:21ch}
+.rlen{position:absolute;top:14px;left:14px;z-index:2;font-size:.7rem;font-weight:700;
+  letter-spacing:.06em;color:var(--bone);background:rgba(6,20,16,.55);
+  padding:5px 9px;border-radius:999px;backdrop-filter:blur(4px)}
+.reel-nav{position:absolute;bottom:34px;right:22px;z-index:5;display:flex;gap:8px}
+.reel-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+  background:var(--bone);color:var(--pine);cursor:pointer;display:grid;place-items:center;
+  transition:transform .3s var(--e),background .3s}
+.reel-nav button:hover{transform:scale(1.06);background:var(--ivory)}
+.reel-nav svg{width:20px;height:20px}
+@media(max-width:620px){.reel-nav{display:none}
+  .rcard{width:78vw}}
+
+/* ============ 2. SIGNATURE: MSK SCAN (animated) ============ */
+.scanband{padding:clamp(56px,8vw,104px) 0;background:var(--pine);color:var(--bone);position:relative;overflow:hidden}
+.scanband::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(90% 60% at 84% 8%,rgba(185,135,62,.16),transparent 60%),
+             radial-gradient(70% 60% at 8% 96%,rgba(185,135,62,.10),transparent 55%)}
+.scangrid{max-width:var(--maxw);margin:0 auto;padding:0 22px;display:grid;
+  grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;position:relative}
+.scan-copy h2{font-family:var(--ff-d,Fraunces,serif);font-weight:520;
+  font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.08;color:#F4F0E6;margin:0 0 18px}
+.scan-copy h2 em{font-style:italic;color:#E9D3A6}
+.scan-copy p{margin:0 0 14px;color:rgba(243,239,229,.74);font-size:1.02rem;line-height:1.7;max-width:48ch}
+.scan-list{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:11px}
+.scan-list li{display:flex;gap:11px;align-items:center;font-weight:560;font-size:.98rem;color:#EDE8DB}
+.scan-list li b{font-family:var(--ff-d,Fraunces,serif);font-size:1.3rem;color:#E9D3A6;line-height:1;display:inline-block;min-width:1.35rem}
+.scan-stage{position:relative;aspect-ratio:1/1.06;border-radius:24px;overflow:hidden;
+  border:1px solid rgba(243,239,229,.16);
+  background:
+     linear-gradient(180deg,rgba(243,239,229,.05),rgba(243,239,229,0) 40%),
+     radial-gradient(120% 90% at 50% 0%,rgba(185,135,62,.12),transparent 60%),
+     #0B2019;}
+.scan-stage svg.fig{position:absolute;inset:0;width:100%;height:100%}
+.scan-mark{position:absolute;right:16px;bottom:14px;width:46px;height:46px;color:rgba(233,211,166,.42)}
+.scan-readout{position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:9px;
+  font-size:.72rem;font-weight:700;letter-spacing:.13em;color:#B8C4BD;text-transform:uppercase}
+.scan-readout .live{width:9px;height:9px;border-radius:50%;background:#57C98A;box-shadow:0 0 0 0 rgba(87,201,138,.6);animation:live 1.8s var(--e) infinite}
+@keyframes live{0%{box-shadow:0 0 0 0 rgba(87,201,138,.55)}70%{box-shadow:0 0 0 10px rgba(87,201,138,0)}100%{box-shadow:0 0 0 0 rgba(87,201,138,0)}}
+/* figure strokes — default (no JS / reduced-motion) = drawn + static, nodes lit */
+.fig .boneline{fill:none;stroke:rgba(233,211,166,.72);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.fig .fj-node{opacity:1;stroke:#E9D3A6;stroke-width:2.6}
+.fig .fj-core{opacity:1}
+.fig .fj-ring{opacity:.45}
+.fig .rom-arc{opacity:.55}.fig .rom-fill{opacity:.12}.fig .rom-txt{opacity:.9}
+.fig .ecg{opacity:.9}
+.fig .beam{stroke:#E9D3A6;stroke-width:2;opacity:.25}
+.fig .beam-glow{stroke:#E9D3A6;stroke-width:8;opacity:.10}
+@media(max-width:860px){
+  .scangrid{grid-template-columns:1fr;gap:26px}
+  .scan-stage{order:-1;max-width:440px;margin:0 auto}
+}
+/* JS + motion — figure: draw bones, roam beam (subtle at rest, bright mid-sweep, never parks at right edge), pulse ECG, pulse joint rings (joints ALWAYS visible) */
+@media(prefers-reduced-motion:no-preference){
+  .js .fig .boneline{stroke-dasharray:1;stroke-dashoffset:1;animation:figdraw 2.8s cubic-bezier(.5,.1,.2,1) .2s forwards}
+  .js .fig .beam,.js .fig .beam-glow{animation:beamsweep 4.8s cubic-bezier(.45,0,.25,1) .8s infinite}
+  .js .fig .ecg{stroke-dasharray:1;stroke-dashoffset:1;animation:ecgdraw 3s linear 1.5s infinite}
+  .js .fig .fj-ring{transform-box:fill-box;transform-origin:center;animation:fjping 3s ease-in-out 2s infinite}
+  .js .fig .fj-core{animation:fjcore 3s ease-in-out 2s infinite}
+  .js .fig .rom{opacity:0;animation:romfade 1.4s ease 2.4s forwards}
+}
+@keyframes figdraw{to{stroke-dashoffset:0}}
+@keyframes beamsweep{
+  0%{transform:translateX(0px);opacity:.22}
+  12%{opacity:.95}
+  55%{transform:translateX(250px);opacity:.95}
+  62%{transform:translateX(250px);opacity:0}
+  100%{transform:translateX(250px);opacity:0}
+}
+@keyframes ecgdraw{0%{stroke-dashoffset:1}100%{stroke-dashoffset:0}}
+@keyframes fjping{
+  0%,100%{transform:scale(1);opacity:.3}
+  50%{transform:scale(1.9);opacity:0}
+}
+@keyframes fjcore{
+  0%,100%{r:3.6}
+  50%{r:5.2}
+}
+@keyframes romfade{0%{opacity:0}100%{opacity:1}}
+
+/* ============ 3. TESTIMONIALS (real) ============ */
+.tstgrid{background:var(--bone);padding:clamp(64px,9vw,120px) 0}
+.tstcards{max-width:var(--maxw);margin:0 auto;padding:0 22px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:26px 24px;display:flex;flex-direction:column;gap:16px;
+  box-shadow:0 22px 50px -40px rgba(14,42,36,.5);position:relative;overflow:hidden}
+.tcard::before{content:"\201C";position:absolute;top:-18px;right:10px;
+  font-family:var(--ff-d,Fraunces,serif);font-size:9rem;color:rgba(185,135,62,.10);line-height:1}
+.tcard .tq{margin:0;font-family:var(--ff-d,Fraunces,serif);font-size:1.06rem;line-height:1.5;color:var(--ink)}
+.tcard .tmeta{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:3px}
+.tcard .tname{font-weight:700;color:var(--pine);font-size:.95rem}
+.tcard .trole{font-size:.82rem;color:var(--ink-mute,var(--ink-soft))}
+.tcard.tstar{background:linear-gradient(160deg,#0E2A24,#123a32);border-color:transparent}
+.tcard.tstar .tq{color:#F0EBDD}.tcard.tstar .tname{color:#E9D3A6}.tcard.tstar .tcard-note{color:rgba(243,239,229,.6)}
+.tstar-badge{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:700;
+  letter-spacing:.05em;color:#E9D3A6;text-transform:uppercase}
+.tcard-note{font-size:.78rem;color:var(--ink-soft)}
+@media(max-width:860px){.tstcards{grid-template-columns:1fr}}
+
+/* ============ 4. PUBLICATIONS ============ */
+.pubsec{background:var(--ivory);padding:clamp(56px,8vw,104px) 0}
+.publist{max-width:840px;margin:0 auto;padding:0 22px;display:grid;gap:0;
+  border-top:1px solid var(--line)}
+.publi{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;
+  padding:20px 4px;border-bottom:1px solid var(--line);transition:background .3s,padding .3s}
+.publi:hover{background:var(--bone);padding-inline:12px}
+.pubno{font-family:var(--ff-d,Fraunces,serif);color:var(--gold);font-size:1.05rem;font-weight:600}
+.pubtitle{margin:0;font-family:var(--ff-d,Fraunces,serif);font-size:1.12rem;line-height:1.35;color:var(--ink)}
+.pubsrc{margin:5px 0 0;font-size:.86rem;color:var(--ink-soft)}
+.pubsrc b{color:var(--pine);font-weight:700}
+.puby{font-size:.82rem;font-weight:700;color:var(--ink-soft);letter-spacing:.04em;white-space:nowrap}
+@media(max-width:620px){.publi{grid-template-columns:auto 1fr}.puby{grid-column:2}}
+
+/* ============ 5. CLINIC EDITORIAL (photo) ============ */
+.editsec{padding:clamp(56px,8vw,100px) 0;background:var(--pine);color:var(--bone);overflow:hidden;position:relative}
+.editgrid{max-width:var(--maxw);margin:0 auto;padding:0 22px;display:grid;
+  grid-template-columns:.82fr 1.18fr;gap:34px;align-items:stretch}
+.edi-photo{position:relative;border-radius:20px;overflow:hidden;min-height:380px;
+  border:1px solid rgba(243,239,229,.16)}
+.edi-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.edi-photo figcaption{position:absolute;left:16px;bottom:16px;right:16px;color:#F0EBDD;
+  font-size:.86rem;font-weight:600;letter-spacing:.02em;
+  padding:12px 14px;border-radius:12px;background:rgba(6,20,16,.5);backdrop-filter:blur(5px)}
+.edi-copy h2{font-family:var(--ff-d,Fraunces,serif);font-weight:520;
+  font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.12;color:#F4F0E6;margin:0 0 16px}
+.edi-copy p{margin:0 0 16px;color:rgba(243,239,229,.74);line-height:1.7;font-size:1.02rem;max-width:52ch}
+.edi-quote{margin:20px 0 0;padding-inline-start:18px;border-inline-start:2px solid var(--gold);
+  font-family:var(--ff-d,Fraunces,serif);font-style:italic;font-size:1.28rem;line-height:1.5;color:#EDE6D6}
+@media(max-width:860px){.editgrid{grid-template-columns:1fr}.edi-photo{min-height:300px}}
+
+/* ============ 6. GALLERY (portrait strip) ============ */
+.galsec{background:var(--bone);padding:clamp(56px,8vw,104px) 0}
+.gal{max-width:var(--maxw);margin:0 auto;padding:0 22px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gtile{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;
+  border:1px solid var(--line);box-shadow:0 20px 46px -38px rgba(14,42,36,.5)}
+.gtile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s linear}
+.gtile:hover img{transform:scale(1.06)}
+.gtile figcaption{position:absolute;left:12px;bottom:12px;color:#F0EBDD;font-size:.8rem;font-weight:600;
+  padding:8px 12px;border-radius:10px;background:rgba(6,20,16,.52);backdrop-filter:blur(4px)}
+.gtile.g-featured{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+@media(max-width:620px){.gal{grid-template-columns:1fr 1fr}.gtile.g-featured{grid-column:span 2}}
+
+/* ---- 1. Above-the-fold hero: no reveal animation, no fade-in. ----
+   Above-the-fold content should render at full opacity/transform on first
+   paint — a 0.9 s opacity ramp on the hero reads as a "washed out" wash
+   if the IntersectionObserver fires late or the user scrolls during it.
+   The .rv reveal stays for below-fold sections (scan, reel, pubs, etc.). */
+.hero .rv, .hero .rv-pending{transition:none !important;animation:none !important}
+.js .hero .rv-pending{opacity:1 !important;transform:none !important}
+.hero .rv.in{opacity:1 !important;transform:none !important}
+
+/* ---- 2. Mobile overflow safeguard (global): flex/grid items default to
+   min-width:auto, so long min-content (a nowrap CTA label, EN·AR, a phone
+   number, .hdr-in) can push their parent past the viewport → on iPhone
+   Safari this forces a zoom-out (the "washed out / clipped" look) and on
+   desktop a horizontal scroller. Clamp every media/inline element to the
+   viewport, give flex/grid children room to shrink, and kill scroll. ---- */
+/* Root clamp — break the min-content feedback loop at the source. Without this, an over-wide child sets the layout viewport, and 100%/vw then resolve against that wider viewport (self-reinforcing 1180). Clamping html/body/main to the real viewport size forces every inner percentage/vw to resolve against the ACTUAL screen width. overflow-x:hidden on html prevents any residual bleed from widening it. */html{max-width:100vw;width:100vw;overflow-x:hidden;scroll-behavior:smooth}body{max-width:100vw;width:100vw;overflow-x:hidden;min-width:0}main{max-width:100vw;width:100vw;min-width:0}
+img,svg,video,canvas,iframe,object,pre,table,.rposter{max-width:100%;height:auto}
+.hero img,.edi-photo img,.gtile img{width:100%;height:auto;max-width:100%}
+html{overflow-x:clip}
+@media (max-width:959px){
+  body{overflow-x:clip}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%;max-width:100%}
+  .hero-cta .btn{min-width:0}
+  .hero-cta .btn > span:first-child{min-width:0}
+  .hero-cta .btn .arr{white-space:normal;flex:none}
+  .hero-copy,.hdr-in,.loc,.call-card,.ftr-brand{width:100%;max-width:100%}
+  .hdr-in,.sm-bar,.cc,.ftr-bar{max-width:100%}
+}
+
+.v4-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.v4-eyebrow::before{content:"";width:26px;height:1.5px;background:currentColor;opacity:.7}
