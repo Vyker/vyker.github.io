@@ -121,7 +121,7 @@
   
 
   <!-- ================= HEADER ================= -->
-  <header class="hdr" role="banner">
+  <header class="hdr">
     <div class="hdr-in">
       <a class="brand" href="#top" aria-label="Dr. Shimas Salih — home">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 256 256"><use href="#crest"/></svg></span>
@@ -230,7 +230,7 @@
         <span class="float-chip"><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#crest"/></svg>
           <span data-en="One visit: assessment · ultrasound · intervention" data-ar="زيارة واحدة: تقييم · موجات · إجراء">One visit: assessment · ultrasound · intervention</span></span>
       </figure>
-      <div class="kn-panel rv" aria-label="Knee joint anatomy — the clinical lens of this practice">
+      <div class="kn-panel rv" role="figure" aria-label="Knee joint anatomy — the clinical lens of this practice">
         <svg class="kn-crest" viewBox="0 0 256 256" aria-hidden="true"><use href="#crest"/></svg>
         <div class="kn-t" aria-hidden="true">Knee joint &#183; clinical anatomy</div>
         <svg viewBox="0 0 300 340" role="img" aria-hidden="true"><use href="#knee"/></svg>
@@ -779,7 +779,7 @@
             <path d="M60 133 L64 143"/><path d="M84 131 L88 142"/><path d="M108 130 L112 141"/><path d="M132 130 L136 141"/><path d="M156 132 L160 142"/><path d="M180 132 L184 142"/>
           </g>
           <!-- target -->
-          <circle cx="164" cy="139" r="14" class="ripple" style="transform-origin:164px 139px;fill:none;stroke:#D9B478;stroke-width="1.6"/>
+          <circle cx="164" cy="139" r="14" class="ripple" style="transform-origin:164px 139px;fill:none;stroke:#D9B478;stroke-width:1.6"/>
           <circle cx="164" cy="139" r="5.5" class="gd"/>
           <!-- needle + syringe -->
           <g class="needle">
@@ -849,7 +849,7 @@
           <!-- fibula -->
           <path d="M164 148 L 158 202" class="str" stroke-width="5" opacity=".85" fill="none"/>
           <!-- joint centre -->
-          <circle cx="142" cy="128" r="9" class="ripple" style="transform-origin:142px 128px;fill:none;stroke:#D9B478;stroke-width="1.6"/>
+          <circle cx="142" cy="128" r="9" class="ripple" style="transform-origin:142px 128px;fill:none;stroke:#D9B478;stroke-width:1.6"/>
           <circle cx="142" cy="128" r="4.2" class="gd"/>
           <!-- motion arcs + tracer -->
           <g class="arc-motion" opacity=".9" stroke="#D9B478">
@@ -883,7 +883,7 @@
          data-ar="كيف يتم الاستشارة في الواقع — من مناقشة حالتك إلى الفحص إلى الإبرة إلى الخطة.">How the consultation really runs — from talking through your case to the scanner to the needle to the plan.</p>
     </div>
     <div class="reel-rails rv">
-      <div class="reel-row" id="reelRow" tabindex="0" aria-label="Media reel — swipe or use arrows">
+      <div class="reel-row" id="reelRow" tabindex="0" role="region" aria-label="Media reel — swipe or use arrows">
         <figure class="rcard" data-len="0:22">
           <video src="/assets/media/vid-intro.mp4" poster="/assets/media/vid-intro-poster.webp" preload="none" playsinline loop muted></video>
           <button class="rplay" type="button" aria-label="Play: Dr. Shimas on the one-visit MSK model"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
@@ -982,7 +982,7 @@
         <p data-en="That is why the consultation is as important as the intervention — history, exam, imaging, and a rehab plan that fits the athlete or office-worker or parent actually sitting next to me."
            data-ar="ولهذا الاستشارة مهمة بقدر الإجراء — التاريخ المرضي، الفحص، التصوير، وخطة تعافٍ تناسب الرياضي أو الموظف أو وليّ الأمر الذي يجلس بجواري فعلاً.">That is why the consultation is as important as the intervention — history, exam, imaging, and a rehab plan that fits the athlete, office-worker, or parent actually sitting next to me.</p>
         <blockquote class="edi-quote" aria-label="A line Dr. Salih has shared publicly">
-          <span data-en="My sincere thanks and appreciation — for putting me on the right path to recovery." data_ar="شكري وتقديري الصادق — لوضعي على المسار الصحيح للتعافي.">My sincere thanks and appreciation — for putting me on the right path to recovery.</span>
+          <span data-en="My sincere thanks and appreciation — for putting me on the right path to recovery." data-ar="شكري وتقديري الصادق — لوضعي على المسار الصحيح للتعافي.">My sincere thanks and appreciation — for putting me on the right path to recovery.</span>
           <footer style="font-size:.8rem;color:var(--ink-soft);margin-top:10px" data-en="— a patient, this clinic" data-ar="— مريض، هذه العيادة">— a patient, this clinic</footer>
         </blockquote>
       </div>
@@ -999,6 +999,7 @@
     </div>
     <div class="tstcards">
       <article class="tcard tstar rv">
+        <h3 class="sr-only">Testimonial — Dr. Pablo Menéndez, orthopaedic surgeon</h3>
         <p class="tq" data-en="“I can fully support this; not only as a fellow doctor, and also as a patient. Dr. Shimas treated my own frozen shoulder, and I experienced firsthand his great professionalism and excellent technique. Highly recommended!”"
            data-ar="«أُؤيّده تماماً؛ ليس فقط بصفتي طبيباَ، بل ومريضاً أيضاً. عالجني د. شيماس في كتفي المتجمّد، وجرّبت شخصاً احترافه الممتاز وتفوق التقنيات. أنصح به!»">“I can fully support this; not only as a fellow doctor, and also as a patient. Dr. Shimas treated my own frozen shoulder, and I experienced firsthand his great professionalism and excellent technique. Highly recommended!”</p>
         <div class="tmeta">
@@ -1008,6 +1009,7 @@
         </div>
       </article>
       <article class="tcard rv">
+        <h3 class="sr-only">Testimonial — S. Fonseca, swimmer</h3>
         <span class="tstar-badge" style="color:var(--gold)">★★★★★ · 500 m again</span>
         <p class="tq" data-en="“After two very hard years with a shoulder injury that kept me away from swimming, I finally swam 500 meters without pain. Then I found Dr. Pablo Menéndez, who guided me to a specialist who dissolved the calcification, injected my own plasma, and gave me physiotherapy — now I swim crawl without pain. The most important 500 meters of my life. Thank you, Dr. Shimas.”"
            data-ar="«بعد عامين صعبين جداً بسبب إصابة في الكتف أبعدتني عن السباحة، أخيراً سبحت 500 متر دون ألم. بعد ذلك وجدت د. باولو ميننديث، الذي وجّهني إلى طبيب متخصص، إذ حلاّل الكلسات، وأدخل بلازما دمي، وأعطني فيزيائي — الآن أسبح فراشة بدون ألم. أهم 500 متر في حياتي. شكراً لك د. شيماس.»">“After two very hard years with a shoulder injury that kept me away from swimming, I finally swam 500 meters without pain. Then I found Dr. Pablo Menéndez, who guided me to a specialist who dissolved the calcification, injected my own plasma, and gave me physiotherapy — now I swim crawl without pain. The most important 500 meters of my life. Thank you, Dr. Shimas.”</p>
@@ -1017,6 +1019,7 @@
         </div>
       </article>
       <article class="tcard rv">
+        <h3 class="sr-only">Testimonial — Bosultan, UAE patient</h3>
         <p class="tq" data-en="“My sincere thanks and appreciation to Dr. Shimas for his exceptional care. With God’s help, his expertise helped identify my chronic injury and put me on the right path to recovery. Truly grateful for your dedication and support.”"
            data-ar="«شكري وتقديري الصادقين للد. شيماس على رعايته الاستثنائية. بمساعدة الله، ساعدتني خبرته في تحديد إصابتي المزمنة ووضعني على المسار الصحيح للتعافي. ممتنّ حقاً لتفانيك ودعمك.»">“My sincere thanks and appreciation to Dr. Shimas for his exceptional care. With God’s help, his expertise helped identify my chronic injury and put me on the right path to recovery. Truly grateful for your dedication and support.”</p>
         <div class="tmeta">
@@ -1183,7 +1186,7 @@
 </main>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="ftr" role="contentinfo">
+  <footer class="ftr">
     <svg class="ftr-mark" viewBox="0 0 256 256" aria-hidden="true"><use href="#crest"/></svg>
     <div class="ftr-top">
       <div class="ftr-brand">
@@ -1210,7 +1213,7 @@
         <span>Dip MSK (RCS Edinburgh) · DABRM</span>
         <span>DFSEM · MSOMM · FIFA</span>
 
-      <div class="ftr-social" aria-label="Social">
+      <div class="ftr-social" role="group" aria-label="Social">
         <span data-en="Connect" data-ar="ارتبط">ارتبط</span>
         <div class="ftr-social-row">
           <a href="https://www.linkedin.com/in/dr-shimas-adil-salih-al-shammary-%D8%AF-%D8%B4%D9%90%D9%85%D9%92%D8%A7%D8%B3-%D8%B9%D8%A7%D8%AF%D9%84-%D8%B5%D8%A7%D9%84%D8%AD-%D8%A7%D9%84%D8%B4%D9%85%D8%B1%D9%8A-078610250/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.49 2.49 0 1 1-.02 4.98 2.49 2.49 0 0 1 .02-4.98zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05C20.6 8.65 22 11 22 15.05V21h-4v-5.31c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.03 1.38-2.03 2.8V21H9z"/></svg><span>LinkedIn</span></a>
@@ -1236,11 +1239,11 @@
 
   <!-- ================= MOBILE STICKY BAR ================= -->
   <nav class="sm-bar" aria-label="Primary actions">
-    <<a class="sm-btn" href="tel:97125551551" aria-label="Call the clinic"><span class="sm-ico sm-ico-call" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c.05 1.25.28 2.5.58 3.6a1 1 0 0 1-.24 1L6.6 10.8Z"/></svg></span><span data-en="Call" data-ar="اتصال">Call</span></a>
+    <a class="sm-btn" href="tel:97125551551" aria-label="Call the clinic"><span class="sm-ico sm-ico-call" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c.05 1.25.28 2.5.58 3.6a1 1 0 0 1-.24 1L6.6 10.8Z"/></svg></span><span data-en="Call" data-ar="اتصال">Call</span></a>
     <a class="sm-btn sm-btn-hl" href="https://wa.me/97125551551?text=Hello%20Dr.%20Shimas%20%E2%80%94%20I%27d%20like%20to%20book%20an%20MSK%20consultation.%20%28via%20your%20website%29" target="_blank" rel="noopener" aria-label="WhatsApp Dr. Shimas (+971 56 144 3238)"><span class="sm-ico sm-ico-wa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12a11.9 11.9 0 0 0 1.636 6.033L0 24l6.124-1.611A11.947 11.947 0 0 0 12 24c6.628 0 12-5.372 12-12S18.628 0 12 0zm0 21.75a9.72 9.72 0 0 1-4.96-1.356l-.355-.211-3.645.947.977-3.557-.233-.367A9.73 9.73 0 1 1 12 21.75zm5.394-7.315c-.296-.148-1.758-.867-2.031-.963-.273-.096-.471-.148-.67.15-.198.295-.766.964-.94 1.162-.173.198-.347.223-.643.075-.296-.148-1.255-.461-2.391-1.473-.885-.787-1.48-1.761-1.653-2.057-.173-.296-.018-.456.13-.603.134-.133.296-.347.443-.52.148-.173.198-.296.296-.494.098-.198.05-.372-.025-.52-.074-.148-.668-1.61-.915-2.203-.241-.579-.486-.5-.668-.51l-.57-.01c-.198 0-.52.074-.791.372-.272.296-1.039 1.014-1.039 2.472 0 1.458 1.064 2.865 1.211 3.063.149.198 2.096 3.201 5.081 4.487.707.306 1.261.488 1.695.624.709.226 1.357.194 1.868.118.57-.086 1.758-.719 2.005-1.412.248-.694.248-1.287.174-1.411-.075-.124-.273-.198-.569-.346z"/></svg></span><span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span></a>
     <a class="sm-btn sm-btn-hl" href="https://adriameduae.com/abu-dhabi/appointments/" target="_blank" rel="noopener" aria-label="Book an appointment — Adria Medical"><span class="sm-ico sm-ico-book" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><span data-en="Book" data-ar="احجز">Book</span></a>
   </nav>
 
   <script src="/js/main.js?v=12" defer></script>
 </body>
-</html>,
+</html>
