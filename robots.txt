@@ -1,0 +1,76 @@
+# drshimas.com — Robots
+# All AI / LLM crawlers are explicitly welcomed (Generative Engine Optimisation).
+# Sources: Google AI optimisation guide, ai-visibility.org.uk allow-lists.
+
+Sitemap: https://drshimas.com/sitemap.xml
+Sitemap: https://drshimas.com/llms.txt
+
+# --- OpenAI (ChatGPT) ---
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: SearchGPTBot
+Allow: /
+
+# --- Anthropic (Claude) ---
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# --- Perplexity ---
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# --- Google (Gemini / AI Overviews research) ---
+User-agent: Google-Extended
+Allow: /
+
+# --- Cohere ---
+User-agent: CCAI-Bot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+
+# --- Amazon (Rufus / Alexa) ---
+User-agent: Amazonbot
+Allow: /
+
+# --- Apple (Apple Intelligence) ---
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Applebot
+Allow: /
+
+# --- Meta (AI research) ---
+User-agent: Meta-WebBot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: Meta-WebAgent
+Allow: /
+
+# --- ByteDance (Doubao / TikTok search) ---
+User-agent: Bytespider
+Allow: /
+
+# --- Alibaba (Tongyi / Qwen) ---
+User-agent: Tongyi-LiSafetyBot
+Allow: /
+User-agent: QwenBot
+Allow: /
+
+# --- Default: everything else allowed too ---
+User-agent: *
+Allow: /
+
+# --- Crawl frequency: this is a static single-page site; no throttling needed,
+#     but be polite ---
+Crawl-delay: 6
